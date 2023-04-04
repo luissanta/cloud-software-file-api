@@ -3,3 +3,4 @@ flask-cors
 python-dotenv==1.0.0
 celery
 redis
+flask_jwt_extended
