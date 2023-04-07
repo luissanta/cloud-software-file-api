@@ -5,15 +5,14 @@ from app.database import db
 
 
 class File(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'files'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False)
-    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'), nullable=False)
-    is_active = db.Column(db.Boolean, default=False)
-    name = db.Column(db.String(50), nullable=False)
-    email = db.Column(db.String(50), nullable=False, unique=True)
-    password = db.Column(db.String(255), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    original_name = db.Column(db.String(50), nullable=False)
+    original_data = db.Column(db.String(50), nullable=False)
+    compressed_name = db.Column(db.String(50), nullable=True)
+    compressed_data = db.Column(db.String(50), nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
 
 class FileSchema(SQLAlchemyAutoSchema):
@@ -24,7 +23,9 @@ class FileSchema(SQLAlchemyAutoSchema):
         load_instance = True
 
     id = fields.Integer()
-    name = fields.String()
-    email = fields.String()
+    original_name = fields.String()
+    original_data = fields.String()
+    compressed_name = fields.String()
+    compressed_data = fields.String()
     created_at = fields.DateTime()
     updated_at = fields.DateTime()
