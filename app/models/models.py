@@ -1,5 +1,3 @@
-from marshmallow import fields
-from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from datetime import datetime
 from app.database import db
 
@@ -13,19 +11,3 @@ class File(db.Model):
     compressed_data = db.Column(db.LargeBinary, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
-
-
-class FileSchema(SQLAlchemyAutoSchema):
-    class Meta:
-        model = File
-        include_relationships = True
-        include_fk = True
-        load_instance = True
-
-    id = fields.Integer()
-    original_name = fields.String()
-    original_data = fields.String()
-    compressed_name = fields.String()
-    compressed_data = fields.String()
-    created_at = fields.DateTime()
-    updated_at = fields.DateTime()

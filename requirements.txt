@@ -5,6 +5,4 @@ celery
 redis==4.5.4
 flask_jwt_extended
 flask-sqlalchemy
-marshmallow-sqlalchemy
-marshmallow
 psycopg2==2.9.6
