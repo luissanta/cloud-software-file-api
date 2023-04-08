@@ -4,7 +4,7 @@ from app.exceptions import FileNotFound
 
 def get_detail_by_id(file: File) -> File:
     try:
-        return File.query.get_or_404(file.id)
+        return File.query.get(file.id)
     except Exception as ex:
         raise FileNotFound(ex)
 
