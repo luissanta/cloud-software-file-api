@@ -1,7 +1,12 @@
-import zlib
+import gzip
 
 
-def compress_gz(file):
-    data = file.read()
-    file_gz = zlib.compress(data)
-    return file_gz
+def compress_to_gz(file_data, file_name: str) -> tuple:
+    gz_file_data = gzip.compress(file_data)
+    gz_file_name = get_name_compressed(file_name)
+    return gz_file_data, gz_file_name
+
+
+def get_name_compressed(file_name: str) -> str:
+    name = file_name.split('.')
+    return name[0] + '.gz'

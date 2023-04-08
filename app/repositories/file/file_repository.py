@@ -11,7 +11,7 @@ def get_detail_by_id(file: File) -> File:
 
 def update(file_to_update: File) -> File | Exception:
     try:
-        fetched_file = File.query.get_or_404(file_to_update.id)
+        fetched_file = get_detail_by_id(file_to_update)
         fetched_file.compressed_name = file_to_update.compressed_name
         fetched_file.compressed_data = file_to_update.compressed_data
         db.session.commit()
