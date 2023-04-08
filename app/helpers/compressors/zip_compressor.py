@@ -1,13 +1,16 @@
+from io import BytesIO
 import zipfile
 
 
-def compress_to_zip(file_data, file_name: str) -> tuple:
-    zip_file = zipfile.ZipFile('archivo.zip', mode='w')
-    zip_file.write(file_data)
-    zip_file.close()
+def compress_to_zip(file_data: bytes, file_name: str) -> tuple:
+    with BytesIO() as buffer:
+        with zipfile.ZipFile(buffer, 'w') as zip_file:
+            zip_info = zipfile.ZipInfo(file_name)
+            zip_file.writestr(zip_info, file_data)
 
-    with open('archivo.zip', 'rb') as f:
-        zip_file_data = f.read()
+        buffer.seek(0)
+        zip_file_data = buffer.read()
+
     zip_file_name = get_name_compressed(file_name)
     return zip_file_data, zip_file_name
 
