@@ -11,6 +11,7 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> None:
     validate_format_converter(FileConverterDTO(new_format=new_format))
 
     fetched_file = get_detail_by_id(File(id=file_id))
+    # file_compress_data, file_compress_name = compress_to_gz(fetched_file.original_data, fetched_file.original_name)
     file_compress_data, file_compress_name = compress_to_zip(fetched_file.original_data, fetched_file.original_name)
     update(File(id=file_id, compressed_data=file_compress_data, compressed_name=file_compress_name))
 
