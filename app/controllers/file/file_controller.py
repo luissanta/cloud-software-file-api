@@ -1,4 +1,4 @@
-from app.repositories import get_detail_by_id
+from app.repositories.file import get_detail_by_id
 from app.models import File
 
 
