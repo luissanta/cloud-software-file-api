@@ -1,9 +1,9 @@
 import zipfile
 
 
-def compress_to_zip(file, file_name: str) -> tuple:
+def compress_to_zip(file_data, file_name: str) -> tuple:
     zip_file = zipfile.ZipFile('archivo.zip', mode='w')
-    zip_file.write(file)
+    zip_file.write(file_data)
     zip_file.close()
 
     with open('archivo.zip', 'rb') as f:
