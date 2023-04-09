@@ -1,11 +1,8 @@
-from app.services.file import FileServiceI
+from app.services.file import IFileService
 from app.models import File
 from app.repositories.file import get_detail_by_id
 
 
-class FileServiceImpl(FileServiceI):
-    def __init__(self) -> None:
-        super().__init__()
-
+class FileServiceImpl(IFileService):
     def get_detail_by_id(self, file: File) -> File:
         return get_detail_by_id(file)
