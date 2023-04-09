@@ -6,7 +6,7 @@ from app.exceptions import UnsupportedFileConverter
 
 class Compressor(ABC):
     @abstractmethod
-    def compress(self):
+    def compress(self) -> GzCompressor | ZipCompressor:
         pass
 
 

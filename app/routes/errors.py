@@ -1,6 +1,5 @@
 from flask import jsonify, Blueprint, Response
-from app.exceptions import FileNotFound, UnsupportedFileConverter, QueryParamsRequired, UnsupportedQueryParam
-
+from app.exceptions import FileNotFound, UnsupportedFileConverter, QueryParamsRequired
 errors_scope = Blueprint("errors", __name__)
 
 
@@ -20,7 +19,6 @@ def handle_user_not_found(error: FileNotFound) -> Response:
 
 
 @errors_scope.app_errorhandler(UnsupportedFileConverter)
-@errors_scope.app_errorhandler(UnsupportedQueryParam)
 @errors_scope.app_errorhandler(QueryParamsRequired)
 def handle_user_not_found(error: FileNotFound) -> Response:
     response = __generate_error_response(error)

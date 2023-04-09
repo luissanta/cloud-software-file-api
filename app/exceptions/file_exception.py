@@ -8,7 +8,3 @@ class UnsupportedFileConverter(Exception):
 
 class QueryParamsRequired(Exception):
     pass
-
-
-class UnsupportedQueryParam(Exception):
-    pass

@@ -17,4 +17,4 @@ def update(file_to_update: File) -> File | Exception:
         db.session.commit()
         return fetched_file
     except Exception as ex:
-        return ex
+        raise FileNotFound(ex)
