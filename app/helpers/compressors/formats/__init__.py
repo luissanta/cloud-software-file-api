@@ -1,2 +1,2 @@
-from .gz_compressor import *
+from .tar_gz_compressor import *
 from .zip_compressor import *
