@@ -6,7 +6,7 @@ from app.helpers.compressors.i_file_compressor import IFileCompressor
 class ZipCompressor(IFileCompressor):
     def compress(self, file_data: bytes, file_name: str) -> tuple:
         with BytesIO() as buffer:
-            with zipfile.ZipFile(buffer, 'w') as zip_file:
+            with zipfile.ZipFile(file=buffer, mode='w', compression=zipfile.ZIP_DEFLATED) as zip_file:
                 zip_info = zipfile.ZipInfo(file_name)
                 zip_file.writestr(zip_info, file_data)
 

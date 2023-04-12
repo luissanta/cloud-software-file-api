@@ -12,7 +12,7 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> None:
         fetched_file = get_detail_by_id(File(id=file_id))
 
         compressor_factory = CompressorFactory()
-        compresor_type = compressor_factory.compress_file(new_format.upper())
+        compresor_type = compressor_factory.get_compressor(new_format.upper())
         file_compress_data, file_compress_name = compresor_type.compress(
             fetched_file.original_data,
             fetched_file.original_name
@@ -29,4 +29,5 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> None:
 
 @celery.task(name='converter.response')
 def converter_response(task_id: str, status: str) -> None:
+    # This is a queue
     pass
