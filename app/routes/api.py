@@ -11,7 +11,7 @@ api_routes = Blueprint('api', __name__)
 
 
 @api_routes.route('/files/<int:file_id>', methods=['GET'])
-# @jwt_required()
+@jwt_required()
 def get_file(file_id: int):
     file_type = FileTypeDTO(request.args.get('type'))
     validate_get_file(file_type)
