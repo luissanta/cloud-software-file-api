@@ -1,4 +1,4 @@
-from flask import Blueprint, request, send_file
+from flask import Blueprint, request, send_file, make_response
 from app.controllers.file import get_detail
 from app.models import File
 from flask_jwt_extended import jwt_required
@@ -17,6 +17,14 @@ def get_file(file_id: int):
     validate_get_file(file_type)
     fetched_file = get_detail(File(id=file_id))
     if file_type.file_type == FileTypeEnum.ORIGINAL.value:
-        return send_file(BytesIO(fetched_file.original_data), download_name=fetched_file.original_name), 200
+        response = make_response(
+            send_file(BytesIO(fetched_file.original_data), download_name=fetched_file.original_name))
+        response.headers['Content-Disposition'] = "filename={}".format(fetched_file.original_name)
+        response.status_code = 200
+        return response
     if file_type.file_type == FileTypeEnum.COMPRESSED.value:
-        return send_file(BytesIO(fetched_file.compressed_data), download_name=fetched_file.compressed_name), 200
+        response = make_response(
+            send_file(BytesIO(fetched_file.compressed_data), download_name=fetched_file.compressed_name))
+        response.headers['Content-Disposition'] = {"filename": fetched_file.compressed_name}
+        response.status_code = 200
+        return response
