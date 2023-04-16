@@ -3,6 +3,7 @@ __pycache__/
 **/__pycache__/
 .idea/
 .env
+.env.prod
 venv/
 # C extensions
 *.so
