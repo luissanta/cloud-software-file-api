@@ -8,6 +8,7 @@ class File(db.Model):
     original_name = db.Column(db.String(100), nullable=False)
     original_data = db.Column(db.LargeBinary, nullable=True)
     temporal_name = db.Column(db.String(), nullable=True)
+    new_format = db.Column(db.String(), nullable=True)
     compressed_name = db.Column(db.String(100), nullable=True)
     compressed_data = db.Column(db.LargeBinary, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
