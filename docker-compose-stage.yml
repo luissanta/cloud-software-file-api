@@ -5,11 +5,15 @@ services:
     image: postgres
     restart: always
     environment:
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_USER=admin
-      - POSTGRES_DB=file
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=file_compressor_db
     ports:
       - "5432:5432"
+    networks:
+      private-net:
+        aliases:
+          - local.postgres
 
   pgadmin:
     image: dpage/pgadmin4
@@ -19,13 +23,33 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - postgresql
+      - postgres
+    networks:
+      private-net:
+        aliases:
+          - local.pgadmin
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      private-net:
+        aliases:
+          - local.redis
 
   app:
     build: .
-    ports:
-      - "5000:5000"
     volumes:
       - .:/app
     depends_on:
-      - pgadmin
+      - redis
+      - postgres
+    networks:
+      private-net:
+        aliases:
+          - local.file-api
+
+networks:
+  private-net:
+    external: true

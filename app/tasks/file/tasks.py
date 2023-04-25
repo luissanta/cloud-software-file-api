@@ -19,12 +19,12 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> None:
             fetched_file.original_data,
             fetched_file.original_name
         )
-        file_manager.save_file(new_format, File(
-            id=file_id,
-            compressed_data=file_compress_data,
-            compressed_name=file_compress_name,
-            temporal_name=fetched_file.temporal_name
-        ))
+        # file_manager.save_file(new_format, File(
+        #     id=file_id,
+        #     compressed_data=file_compress_data,
+        #     compressed_name=file_compress_name,
+        #     temporal_name=fetched_file.temporal_name
+        # ))
 
     except:
         status = ConverterStatusEnum.FAILED.value
