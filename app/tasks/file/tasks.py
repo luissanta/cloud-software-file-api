@@ -1,11 +1,11 @@
 from app.repositories.file.manager_repository import FileManager, NetworkFileStorage
 from celery_app import celery
-from app.repositories.file import get_detail_by_id, update
 from app.models import File
 from app.factories import CompressorFactory
 from app.enums.file import ConverterStatusEnum
 
 file_manager = FileManager(NetworkFileStorage())
+
 
 @celery.task(name='converter.request')
 def converter_request(task_id: str, file_id: int, new_format: str) -> None:
@@ -19,10 +19,14 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> None:
             fetched_file.original_data,
             fetched_file.original_name
         )
-        file_manager.save_file(new_format,File(id=file_id, compressed_data=file_compress_data, compressed_name=file_compress_name, temporal_name=fetched_file.temporal_name))        
+        file_manager.save_file(new_format, File(
+            id=file_id,
+            compressed_data=file_compress_data,
+            compressed_name=file_compress_name,
+            temporal_name=fetched_file.temporal_name
+        ))
 
-    except Exception as e:
-        print(f"Detail error: {e}")
+    except:
         status = ConverterStatusEnum.FAILED.value
 
     finally:

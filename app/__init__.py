@@ -1,7 +1,7 @@
 from flask import Flask
 from config import Config
 from flask_cors import CORS
-from .routes import api_routes, errors_scope
+from .routes import errors_scope
 from flask_jwt_extended import JWTManager
 from app.models import db
 
@@ -16,4 +16,3 @@ db.init_app(app)
 db.create_all()
 
 app.register_blueprint(errors_scope, url_prefix="/")
-app.register_blueprint(api_routes, url_prefix='/api')
