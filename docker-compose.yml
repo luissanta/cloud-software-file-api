@@ -1,31 +1,26 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres
-    restart: always
-    environment:
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_USER=admin
-      - POSTGRES_DB=file
+  redis:
+    image: redis
     ports:
-      - "5432:5432"
-
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@admin.co"
-      PGADMIN_DEFAULT_PASSWORD: "admin"
-    ports:
-      - "80:80"
-    depends_on:
-      - postgresql
+      - "6379:6379"
+    networks:
+      private-net:
+        aliases:
+          - local.redis
 
   app:
     build: .
-    ports:
-      - "5000:5000"
     volumes:
       - .:/app
     depends_on:
-      - pgadmin
+      - redis
+    networks:
+      private-net:
+        aliases:
+          - local.file-api
+
+networks:
+  private-net:
+    external: true
