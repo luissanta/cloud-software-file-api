@@ -4,10 +4,13 @@ __pycache__/
 .idea/
 .env
 .env.prod
+gcp_credentials.json
 venv/
 # C extensions
 *.so
-Scripts/
+Scripts
+.vscode
+pyvenv.cfg
 
 # Distribution / packaging
 build/
