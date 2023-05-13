@@ -7,12 +7,13 @@ from concurrent.futures._base import TimeoutError
 from flask_apscheduler import APScheduler
 from google.cloud import pubsub_v1
 
-from app import db
-from app.models import Task
 from app.repositories.file.file_manager import FileManager
 from app.repositories.file.bucket_file_storage import BucketFileStorage
 from app.factories import CompressorFactory
 from app.enums.file import ConverterStatusEnum
+
+from ...models.sqlAlchemy.TaskFileModel import Task
+from ...models.sqlAlchemy.declarative_base import Session
 
 logging.config.fileConfig("logging.conf")
 logger = logging.getLogger(__name__)
@@ -35,7 +36,6 @@ def callback(msg):
 
 
 def converter_request(task_id: str, file_id: int, new_format: str) -> str:
-    status = ConverterStatusEnum.PROCESSED.value
     try:
         fetched_file_data, fetched_file_name = file_manager.get_file(file_id)
         compressor_factory = CompressorFactory()
@@ -49,12 +49,20 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> str:
             file_compress_data,
             new_format
         )
-
+        status = ConverterStatusEnum.PROCESSED.value
     except:
         status = ConverterStatusEnum.FAILED.value
     finally:
-
+        update_status_task(task_id,status)
         return status
+
+
+def update_status_task(task_id, status):
+    session = Session()
+    task = session.query(Task).filter(Task.task_id == task_id).first()
+    task.status = status
+    session.add(task)
+    session.commit()
 
 
 def process_msg():
@@ -72,4 +80,5 @@ def process_msg():
         future.cancel()
 
 
-scheduler.add_job(id="test", func=process_msg, trigger="interval", seconds=20, max_instances=1)
+
+scheduler.add_job(id="test", func=process_msg, trigger="interval", seconds=10, max_instances=5)

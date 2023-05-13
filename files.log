@@ -1,17 +1,16 @@
-2023-05-13 02:52:10,611:INFO:apscheduler.scheduler:base:add_job:444:Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2023-05-13 02:52:10,728:INFO:apscheduler.scheduler:base:_real_add_job:885:Added job "test" to job store "default"
-2023-05-13 02:52:10,728:INFO:apscheduler.scheduler:base:start:171:Scheduler started
-2023-05-13 02:52:10,731:INFO:werkzeug:_internal:_log:224:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2023-05-13 10:06:40,971:INFO:apscheduler.scheduler:base:add_job:444:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-05-13 10:06:41,016:INFO:apscheduler.scheduler:base:_real_add_job:885:Added job "test" to job store "default"
+2023-05-13 10:06:41,016:INFO:apscheduler.scheduler:base:start:171:Scheduler started
+2023-05-13 10:06:41,016:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-13 10:06:41,017:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 10:06:50.971049-05:00 (in 9.953986 seconds)
+2023-05-13 10:06:41,017:INFO:werkzeug:_internal:_log:224:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5003
-2023-05-13 02:52:10,732:INFO:werkzeug:_internal:_log:224:[33mPress CTRL+C to quit[0m
-2023-05-13 02:52:10,748:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 02:52:10,748:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 02:52:30.610978-05:00 (in 19.862368 seconds)
-2023-05-13 02:52:30,612:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 02:52:30,613:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:20], next run at: 2023-05-13 02:52:30 -05)" (scheduled at 2023-05-13 02:52:30.610978-05:00)
-2023-05-13 02:52:30,614:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 02:52:50.610978-05:00 (in 19.998086 seconds)
-2023-05-13 02:52:30,614:INFO:app.tasks.file.tasks:tasks:process_msg:62:running schedule task
-2023-05-13 02:52:50,589:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 02:52:50,590:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 02:52:50.610978-05:00 (in 0.020932 seconds)
-2023-05-13 02:52:50,612:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 02:52:50,613:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:20], next run at: 2023-05-13 02:52:50 -05)" skipped: maximum number of running instances reached (1)
-2023-05-13 02:52:50,614:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 02:53:10.610978-05:00 (in 19.997604 seconds)
+2023-05-13 10:06:41,018:INFO:werkzeug:_internal:_log:224:[33mPress CTRL+C to quit[0m
+2023-05-13 10:06:50,973:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-13 10:06:50,973:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-13 10:06:50 -05)" (scheduled at 2023-05-13 10:06:50.971049-05:00)
+2023-05-13 10:06:50,974:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 10:07:00.971049-05:00 (in 9.997635 seconds)
+2023-05-13 10:06:50,974:INFO:app.tasks.file.tasks:tasks:process_msg:70:running schedule task
+2023-05-13 10:07:00,973:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-13 10:07:00,975:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-13 10:07:00 -05)" (scheduled at 2023-05-13 10:07:00.971049-05:00)
+2023-05-13 10:07:00,975:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 10:07:10.971049-05:00 (in 9.996280 seconds)
+2023-05-13 10:07:00,975:INFO:app.tasks.file.tasks:tasks:process_msg:70:running schedule task

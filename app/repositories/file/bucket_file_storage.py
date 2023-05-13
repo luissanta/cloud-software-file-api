@@ -1,5 +1,5 @@
-from app.models.models import File
-from app.database import db
+from ...models.sqlAlchemy.declarative_base import Session
+from ...models.sqlAlchemy.TaskFileModel import File
 from .i_File import IFile
 import os
 from google.cloud import storage
@@ -12,7 +12,9 @@ bucket = storage_client.get_bucket(os.environ.get('GCP_BUCKET'))
 
 class BucketFileStorage(IFile):
     def get(self, file_id) -> tuple:
-        fetched_file = File.query.get_or_404(file_id)
+        session = Session()
+        fetched_file = session.query(File).filter(File.id == file_id).first()
+        #fetched_file = File.query.get_or_404(file_id)
         temp_original_name = fetched_file.temporal_name + "." + fetched_file.original_name.split('.')[1]
         blob = bucket.blob(os.environ.get('GCP_BUCKET_PATH_ORIGINAL') + '/' + temp_original_name)
         data = blob.download_as_bytes()
