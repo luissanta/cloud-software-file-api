@@ -1,5 +1,6 @@
 import json
 import logging.config
+import multiprocessing
 import os
 from concurrent.futures._base import CancelledError
 from concurrent.futures._base import TimeoutError
@@ -29,10 +30,12 @@ topic = os.getenv('GCP_TOPIC')
 def callback(msg):
     try:
         data = json.loads(msg.data)
+        logger.info("running schedule task: id {task_id}, msg: {msg}".format(task_id=data["task_id"], msg=data))
         converter_request(data["task_id"], data["url"], data["new_format"])
         msg.ack()
     except Exception as e:
         logger.error("error processing message: error {error}".format(error=e))
+        raise e
 
 
 def converter_request(task_id: str, file_id: int, new_format: str) -> str:
@@ -53,7 +56,7 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> str:
     except:
         status = ConverterStatusEnum.FAILED.value
     finally:
-        update_status_task(task_id,status)
+        update_status_task(task_id, status)
         return status
 
 
@@ -67,18 +70,19 @@ def update_status_task(task_id, status):
 
 def process_msg():
     try:
-        logger.info("running schedule task")
+
         with pubsub_v1.SubscriberClient() as subscriber:
             future = subscriber.subscribe(subscriptor, callback)
             future.result()
     except TimeoutError:
         logger.info("does not exist any message to process")
+        future.cancel()
     except CancelledError as e:
         logger.error("message process was cancelled with error: {error}".format(error=e))
+        future.cancel()
     except Exception as e:
         logger.error("failed to proccess message: error {error}".format(error=e))
         future.cancel()
 
 
-
-scheduler.add_job(id="test", func=process_msg, trigger="interval", seconds=10, max_instances=5)
+scheduler.add_job(id="test", func=process_msg, trigger="interval", seconds=15, max_instances=multiprocessing.cpu_count())
