@@ -1,46 +1,63 @@
-2023-05-13 14:59:47,074:INFO:apscheduler.scheduler:base:add_job:444:Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2023-05-13 14:59:47,140:INFO:apscheduler.scheduler:base:_real_add_job:885:Added job "test" to job store "default"
-2023-05-13 14:59:47,141:INFO:apscheduler.scheduler:base:start:171:Scheduler started
-2023-05-13 14:59:47,145:INFO:werkzeug:_internal:_log:224:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2023-05-14 09:43:08,414:INFO:apscheduler.scheduler:base:add_job:444:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-05-14 09:43:08,460:INFO:apscheduler.scheduler:base:_real_add_job:885:Added job "test" to job store "default"
+2023-05-14 09:43:08,460:INFO:apscheduler.scheduler:base:start:171:Scheduler started
+2023-05-14 09:43:08,463:INFO:werkzeug:_internal:_log:224:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5003
-2023-05-13 14:59:47,146:INFO:werkzeug:_internal:_log:224:[33mPress CTRL+C to quit[0m
-2023-05-13 14:59:47,165:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 14:59:47,165:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:00:02.073803-05:00 (in 14.908134 seconds)
-2023-05-13 15:00:02,076:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:00:02,077:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:00:02 -05)" (scheduled at 2023-05-13 15:00:02.073803-05:00)
-2023-05-13 15:00:02,078:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:00:17.073803-05:00 (in 14.996747 seconds)
-2023-05-13 15:00:17,079:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:00:17,080:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:00:17 -05)" (scheduled at 2023-05-13 15:00:17.073803-05:00)
-2023-05-13 15:00:17,081:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:00:32.073803-05:00 (in 14.993609 seconds)
-2023-05-13 15:00:32,081:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:00:32,082:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:00:47 -05)" (scheduled at 2023-05-13 15:00:32.073803-05:00)
-2023-05-13 15:00:32,082:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:00:47.073803-05:00 (in 14.992362 seconds)
-2023-05-13 15:00:37,712:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id d4821f9e-b43e-40e9-8e8e-c4910819fb0e, msg: {'task_id': 'd4821f9e-b43e-40e9-8e8e-c4910819fb0e', 'url': 107, 'new_format': 'zip'}
-2023-05-13 15:00:37,714:ERROR:app.tasks.file.tasks:tasks:callback:38:error processing message: error error test
-2023-05-13 15:00:37,728:INFO:app.tasks.file.tasks:tasks:process_msg:79:does not exist any message to process
-2023-05-13 15:00:37,730:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:00:47 -05)" executed successfully
-2023-05-13 15:00:47,079:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:00:47,080:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:01:02.073803-05:00 (in 14.994047 seconds)
-2023-05-13 15:00:47,080:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:01:02 -05)" (scheduled at 2023-05-13 15:00:47.073803-05:00)
-2023-05-13 15:00:48,660:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id d4821f9e-b43e-40e9-8e8e-c4910819fb0e, msg: {'task_id': 'd4821f9e-b43e-40e9-8e8e-c4910819fb0e', 'url': 107, 'new_format': 'zip'}
-2023-05-13 15:00:48,661:ERROR:app.tasks.file.tasks:tasks:callback:38:error processing message: error error test
-2023-05-13 15:00:48,666:INFO:app.tasks.file.tasks:tasks:process_msg:79:does not exist any message to process
-2023-05-13 15:00:48,668:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:01:02 -05)" executed successfully
-2023-05-13 15:00:59,767:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id d4821f9e-b43e-40e9-8e8e-c4910819fb0e, msg: {'task_id': 'd4821f9e-b43e-40e9-8e8e-c4910819fb0e', 'url': 107, 'new_format': 'zip'}
-2023-05-13 15:00:59,768:ERROR:app.tasks.file.tasks:tasks:callback:38:error processing message: error error test
-2023-05-13 15:00:59,772:INFO:app.tasks.file.tasks:tasks:process_msg:79:does not exist any message to process
-2023-05-13 15:00:59,774:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:01:02 -05)" executed successfully
-2023-05-13 15:01:02,060:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:01:02,061:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:01:02.073803-05:00 (in 0.012738 seconds)
-2023-05-13 15:01:02,075:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:01:02,076:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:01:17.073803-05:00 (in 14.997450 seconds)
-2023-05-13 15:01:02,077:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:01:17 -05)" (scheduled at 2023-05-13 15:01:02.073803-05:00)
-2023-05-13 15:01:10,827:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id d4821f9e-b43e-40e9-8e8e-c4910819fb0e, msg: {'task_id': 'd4821f9e-b43e-40e9-8e8e-c4910819fb0e', 'url': 107, 'new_format': 'zip'}
-2023-05-13 15:01:10,827:ERROR:app.tasks.file.tasks:tasks:callback:38:error processing message: error error test
-2023-05-13 15:01:10,830:INFO:app.tasks.file.tasks:tasks:process_msg:79:does not exist any message to process
-2023-05-13 15:01:10,833:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:01:17 -05)" executed successfully
-2023-05-13 15:01:17,068:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:01:17,069:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:01:17.073803-05:00 (in 0.004491 seconds)
-2023-05-13 15:01:17,074:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-13 15:01:17,075:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-13 15:01:32.073803-05:00 (in 14.998802 seconds)
-2023-05-13 15:01:17,075:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:15], next run at: 2023-05-13 15:01:32 -05)" (scheduled at 2023-05-13 15:01:17.073803-05:00)
+2023-05-14 09:43:08,463:INFO:werkzeug:_internal:_log:224:[33mPress CTRL+C to quit[0m
+2023-05-14 09:43:08,479:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:08,479:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:09.414737-05:00 (in 0.935365 seconds)
+2023-05-14 09:43:09,418:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:09,420:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:09 -05)" (scheduled at 2023-05-14 09:43:09.414737-05:00)
+2023-05-14 09:43:09,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:10.414737-05:00 (in 0.995475 seconds)
+2023-05-14 09:43:10,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:10,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:10 -05)" (scheduled at 2023-05-14 09:43:10.414737-05:00)
+2023-05-14 09:43:10,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:11.414737-05:00 (in 0.992946 seconds)
+2023-05-14 09:43:11,417:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:11,419:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:11 -05)" (scheduled at 2023-05-14 09:43:11.414737-05:00)
+2023-05-14 09:43:11,419:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:12.414737-05:00 (in 0.996365 seconds)
+2023-05-14 09:43:12,418:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:12,419:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:12 -05)" (scheduled at 2023-05-14 09:43:12.414737-05:00)
+2023-05-14 09:43:12,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:13.414737-05:00 (in 0.996160 seconds)
+2023-05-14 09:43:13,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:13,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:14 -05)" (scheduled at 2023-05-14 09:43:13.414737-05:00)
+2023-05-14 09:43:13,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:14.414737-05:00 (in 0.992854 seconds)
+2023-05-14 09:43:14,418:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:14,420:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:14 -05)" (scheduled at 2023-05-14 09:43:14.414737-05:00)
+2023-05-14 09:43:14,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:15.414737-05:00 (in 0.995332 seconds)
+2023-05-14 09:43:15,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:15,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:16 -05)" (scheduled at 2023-05-14 09:43:15.414737-05:00)
+2023-05-14 09:43:15,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:16.414737-05:00 (in 0.992860 seconds)
+2023-05-14 09:43:16,419:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:16,420:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:16 -05)" (scheduled at 2023-05-14 09:43:16.414737-05:00)
+2023-05-14 09:43:16,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:17.414737-05:00 (in 0.995172 seconds)
+2023-05-14 09:43:17,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:17,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:18 -05)" (scheduled at 2023-05-14 09:43:17.414737-05:00)
+2023-05-14 09:43:17,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:18.414737-05:00 (in 0.992833 seconds)
+2023-05-14 09:43:18,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:18,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:19 -05)" (scheduled at 2023-05-14 09:43:18.414737-05:00)
+2023-05-14 09:43:18,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:19.414737-05:00 (in 0.992736 seconds)
+2023-05-14 09:43:19,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:19,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:20.414737-05:00 (in 0.992952 seconds)
+2023-05-14 09:43:20,419:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:20,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:21.414737-05:00 (in 0.995218 seconds)
+2023-05-14 09:43:21,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:21,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:21 -05)" skipped: maximum number of running instances reached (12)
+2023-05-14 09:43:21,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:22.414737-05:00 (in 0.993559 seconds)
+2023-05-14 09:43:22,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:22,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:22 -05)" skipped: maximum number of running instances reached (12)
+2023-05-14 09:43:22,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:23.414737-05:00 (in 0.993689 seconds)
+2023-05-14 09:43:23,417:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:23,418:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:23 -05)" skipped: maximum number of running instances reached (12)
+2023-05-14 09:43:23,418:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:24.414737-05:00 (in 0.996464 seconds)
+2023-05-14 09:43:24,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:24,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:24 -05)" skipped: maximum number of running instances reached (12)
+2023-05-14 09:43:24,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:25.414737-05:00 (in 0.993468 seconds)
+2023-05-14 09:43:25,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:25,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:25 -05)" skipped: maximum number of running instances reached (12)
+2023-05-14 09:43:25,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:26.414737-05:00 (in 0.993840 seconds)
+2023-05-14 09:43:26,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:26,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:26 -05)" skipped: maximum number of running instances reached (12)
+2023-05-14 09:43:26,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:27.414737-05:00 (in 0.993679 seconds)
+2023-05-14 09:43:27,419:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-14 09:43:27,420:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:27 -05)" skipped: maximum number of running instances reached (12)
+2023-05-14 09:43:27,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:28.414737-05:00 (in 0.994904 seconds)
