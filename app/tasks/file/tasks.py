@@ -85,4 +85,4 @@ def process_msg():
         future.cancel()
 
 
-scheduler.add_job(id="test", func=process_msg, trigger="interval", seconds=15, max_instances=multiprocessing.cpu_count())
+scheduler.add_job(id="test", func=process_msg, trigger="interval", seconds=int(os.getenv("SCHEDULER_TIME")), max_instances=multiprocessing.cpu_count())
