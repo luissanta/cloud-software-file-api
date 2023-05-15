@@ -18,6 +18,7 @@ class BucketFileStorage(IFile):
         temp_original_name = fetched_file.temporal_name + "." + fetched_file.original_name.split('.')[1]
         blob = bucket.blob(os.environ.get('GCP_BUCKET_PATH_ORIGINAL') + '/' + temp_original_name)
         data = blob.download_as_bytes()
+        session.commit()
         return data, temp_original_name
 
     def save(self, file_name, file_data, new_format) -> None:
