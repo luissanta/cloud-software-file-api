@@ -1,50 +1,10 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres
-    restart: always
-    environment:
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=file_compressor_db
-    ports:
-      - "5432:5432"
-    networks:
-      private-net:
-        aliases:
-          - local.postgres
-
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@admin.co"
-      PGADMIN_DEFAULT_PASSWORD: "admin"
-    ports:
-      - "80:80"
-    depends_on:
-      - postgres
-    networks:
-      private-net:
-        aliases:
-          - local.pgadmin
-
-  redis:
-    image: redis
-    ports:
-      - "6379:6379"
-    networks:
-      private-net:
-        aliases:
-          - local.redis
-
   app:
     build: .
     volumes:
       - .:/app_file
-    depends_on:
-      - redis
-      - postgres
     networks:
       private-net:
         aliases:

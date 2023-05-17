@@ -1,63 +1,78 @@
-2023-05-14 09:43:08,414:INFO:apscheduler.scheduler:base:add_job:444:Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2023-05-14 09:43:08,460:INFO:apscheduler.scheduler:base:_real_add_job:885:Added job "test" to job store "default"
-2023-05-14 09:43:08,460:INFO:apscheduler.scheduler:base:start:171:Scheduler started
-2023-05-14 09:43:08,463:INFO:werkzeug:_internal:_log:224:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5003
-2023-05-14 09:43:08,463:INFO:werkzeug:_internal:_log:224:[33mPress CTRL+C to quit[0m
-2023-05-14 09:43:08,479:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:08,479:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:09.414737-05:00 (in 0.935365 seconds)
-2023-05-14 09:43:09,418:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:09,420:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:09 -05)" (scheduled at 2023-05-14 09:43:09.414737-05:00)
-2023-05-14 09:43:09,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:10.414737-05:00 (in 0.995475 seconds)
-2023-05-14 09:43:10,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:10,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:10 -05)" (scheduled at 2023-05-14 09:43:10.414737-05:00)
-2023-05-14 09:43:10,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:11.414737-05:00 (in 0.992946 seconds)
-2023-05-14 09:43:11,417:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:11,419:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:11 -05)" (scheduled at 2023-05-14 09:43:11.414737-05:00)
-2023-05-14 09:43:11,419:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:12.414737-05:00 (in 0.996365 seconds)
-2023-05-14 09:43:12,418:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:12,419:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:12 -05)" (scheduled at 2023-05-14 09:43:12.414737-05:00)
-2023-05-14 09:43:12,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:13.414737-05:00 (in 0.996160 seconds)
-2023-05-14 09:43:13,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:13,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:14 -05)" (scheduled at 2023-05-14 09:43:13.414737-05:00)
-2023-05-14 09:43:13,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:14.414737-05:00 (in 0.992854 seconds)
-2023-05-14 09:43:14,418:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:14,420:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:14 -05)" (scheduled at 2023-05-14 09:43:14.414737-05:00)
-2023-05-14 09:43:14,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:15.414737-05:00 (in 0.995332 seconds)
-2023-05-14 09:43:15,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:15,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:16 -05)" (scheduled at 2023-05-14 09:43:15.414737-05:00)
-2023-05-14 09:43:15,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:16.414737-05:00 (in 0.992860 seconds)
-2023-05-14 09:43:16,419:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:16,420:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:16 -05)" (scheduled at 2023-05-14 09:43:16.414737-05:00)
-2023-05-14 09:43:16,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:17.414737-05:00 (in 0.995172 seconds)
-2023-05-14 09:43:17,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:17,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:18 -05)" (scheduled at 2023-05-14 09:43:17.414737-05:00)
-2023-05-14 09:43:17,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:18.414737-05:00 (in 0.992833 seconds)
-2023-05-14 09:43:18,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:18,422:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:19 -05)" (scheduled at 2023-05-14 09:43:18.414737-05:00)
-2023-05-14 09:43:18,423:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:19.414737-05:00 (in 0.992736 seconds)
-2023-05-14 09:43:19,421:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:19,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:20.414737-05:00 (in 0.992952 seconds)
-2023-05-14 09:43:20,419:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:20,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:21.414737-05:00 (in 0.995218 seconds)
-2023-05-14 09:43:21,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:21,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:21 -05)" skipped: maximum number of running instances reached (12)
-2023-05-14 09:43:21,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:22.414737-05:00 (in 0.993559 seconds)
-2023-05-14 09:43:22,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:22,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:22 -05)" skipped: maximum number of running instances reached (12)
-2023-05-14 09:43:22,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:23.414737-05:00 (in 0.993689 seconds)
-2023-05-14 09:43:23,417:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:23,418:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:23 -05)" skipped: maximum number of running instances reached (12)
-2023-05-14 09:43:23,418:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:24.414737-05:00 (in 0.996464 seconds)
-2023-05-14 09:43:24,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:24,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:24 -05)" skipped: maximum number of running instances reached (12)
-2023-05-14 09:43:24,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:25.414737-05:00 (in 0.993468 seconds)
-2023-05-14 09:43:25,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:25,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:25 -05)" skipped: maximum number of running instances reached (12)
-2023-05-14 09:43:25,421:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:26.414737-05:00 (in 0.993840 seconds)
-2023-05-14 09:43:26,420:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:26,421:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:26 -05)" skipped: maximum number of running instances reached (12)
-2023-05-14 09:43:26,422:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:27.414737-05:00 (in 0.993679 seconds)
-2023-05-14 09:43:27,419:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
-2023-05-14 09:43:27,420:WARNING:apscheduler.scheduler:base:_process_jobs:980:Execution of job "test (trigger: interval[0:00:01], next run at: 2023-05-14 09:43:27 -05)" skipped: maximum number of running instances reached (12)
-2023-05-14 09:43:27,420:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-14 09:43:28.414737-05:00 (in 0.994904 seconds)
+2023-05-17 12:31:38,037:INFO:apscheduler.scheduler:base:add_job:444:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2023-05-17 12:31:40,100:INFO:apscheduler.scheduler:base:_real_add_job:885:Added job "test" to job store "default"
+2023-05-17 12:31:40,101:INFO:apscheduler.scheduler:base:start:171:Scheduler started
+2023-05-17 12:31:40,102:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:31:40,103:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:31:48.037520+00:00 (in 7.934484 seconds)
+2023-05-17 12:31:48,038:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:31:48,040:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:31:58 UTC)" (scheduled at 2023-05-17 12:31:48.037520+00:00)
+2023-05-17 12:31:48,040:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:31:58.037520+00:00 (in 9.998708 seconds)
+2023-05-17 12:31:50,065:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:31:50,299:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id e73821f0-6509-46e5-97fb-68348546db76, msg: {'task_id': 'e73821f0-6509-46e5-97fb-68348546db76', 'url': 7941, 'new_format': 'zip'}
+2023-05-17 12:31:52,952:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:31:52,955:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:31:52,957:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:31:58 UTC)" executed successfully
+2023-05-17 12:31:58,040:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:31:58,041:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:32:08.037520+00:00 (in 9.996206 seconds)
+2023-05-17 12:31:58,041:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:08 UTC)" (scheduled at 2023-05-17 12:31:58.037520+00:00)
+2023-05-17 12:32:03,604:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id e73821f0-6509-46e5-97fb-68348546db76, msg: {'task_id': 'e73821f0-6509-46e5-97fb-68348546db76', 'url': 7941, 'new_format': 'zip'}
+2023-05-17 12:32:03,850:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:32:04,789:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:04,794:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:04,796:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:08 UTC)" executed successfully
+2023-05-17 12:32:05,173:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:08,049:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:32:08,050:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:32:18.037520+00:00 (in 9.987430 seconds)
+2023-05-17 12:32:08,050:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:18 UTC)" (scheduled at 2023-05-17 12:32:08.037520+00:00)
+2023-05-17 12:32:14,627:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id e73821f0-6509-46e5-97fb-68348546db76, msg: {'task_id': 'e73821f0-6509-46e5-97fb-68348546db76', 'url': 7941, 'new_format': 'zip'}
+2023-05-17 12:32:14,628:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:32:15,834:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:15,839:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:15,842:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:18 UTC)" executed successfully
+2023-05-17 12:32:16,541:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:18,039:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:32:18,040:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:32:28.037520+00:00 (in 9.996916 seconds)
+2023-05-17 12:32:18,041:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:28 UTC)" (scheduled at 2023-05-17 12:32:18.037520+00:00)
+2023-05-17 12:32:25,600:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:32:25,867:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id e73821f0-6509-46e5-97fb-68348546db76, msg: {'task_id': 'e73821f0-6509-46e5-97fb-68348546db76', 'url': 7941, 'new_format': 'zip'}
+2023-05-17 12:32:26,050:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:26,055:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:26,058:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:28 UTC)" executed successfully
+2023-05-17 12:32:26,380:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:28,039:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:32:28,040:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:32:38.037520+00:00 (in 9.997469 seconds)
+2023-05-17 12:32:28,040:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:38 UTC)" (scheduled at 2023-05-17 12:32:28.037520+00:00)
+2023-05-17 12:32:29,812:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id 3ae192fc-9fba-46a2-927e-debe160c937e, msg: {'task_id': '3ae192fc-9fba-46a2-927e-debe160c937e', 'url': 2, 'new_format': 'zip'}
+2023-05-17 12:32:36,597:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:32:36,884:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id e73821f0-6509-46e5-97fb-68348546db76, msg: {'task_id': 'e73821f0-6509-46e5-97fb-68348546db76', 'url': 7941, 'new_format': 'zip'}
+2023-05-17 12:32:38,029:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:32:38,055:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:48 UTC)" (scheduled at 2023-05-17 12:32:38.037520+00:00)
+2023-05-17 12:32:38,056:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:32:48.037520+00:00 (in 9.983444 seconds)
+2023-05-17 12:32:38,077:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:38,084:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:38,086:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:48 UTC)" executed successfully
+2023-05-17 12:32:38,883:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:47,619:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id e73821f0-6509-46e5-97fb-68348546db76, msg: {'task_id': 'e73821f0-6509-46e5-97fb-68348546db76', 'url': 7941, 'new_format': 'zip'}
+2023-05-17 12:32:47,875:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:32:48,043:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:48,047:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:48,049:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:48 UTC)" executed successfully
+2023-05-17 12:32:48,060:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:32:48,061:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:32:58.037520+00:00 (in 9.976232 seconds)
+2023-05-17 12:32:48,061:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:32:58 UTC)" (scheduled at 2023-05-17 12:32:48.037520+00:00)
+2023-05-17 12:32:49,035:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:58,039:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:32:58,039:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:33:08.037520+00:00 (in 9.998024 seconds)
+2023-05-17 12:32:58,039:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:33:08 UTC)" (scheduled at 2023-05-17 12:32:58.037520+00:00)
+2023-05-17 12:32:58,645:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:32:58,907:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id e73821f0-6509-46e5-97fb-68348546db76, msg: {'task_id': 'e73821f0-6509-46e5-97fb-68348546db76', 'url': 7941, 'new_format': 'zip'}
+2023-05-17 12:32:59,049:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:59,053:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:32:59,054:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:33:08 UTC)" executed successfully
+2023-05-17 12:32:59,316:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:33:00,060:INFO:app.tasks.file.tasks:tasks:callback:33:running schedule task: id f8200b5d-1194-4ac9-8709-ff6eb03df659, msg: {'task_id': 'f8200b5d-1194-4ac9-8709-ff6eb03df659', 'url': 1, 'new_format': 'zip'}
+2023-05-17 12:33:00,487:ERROR:app.tasks.file.tasks:tasks:callback:37:error processing message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:33:00,490:ERROR:app.tasks.file.tasks:tasks:process_msg:84:failed to proccess message: error 'NoneType' object has no attribute 'status'
+2023-05-17 12:33:00,493:INFO:apscheduler.executors.default:base:run_job:144:Job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:33:08 UTC)" executed successfully
+2023-05-17 12:33:08,039:DEBUG:apscheduler.scheduler:base:_process_jobs:944:Looking for jobs to run
+2023-05-17 12:33:08,042:DEBUG:apscheduler.scheduler:base:_process_jobs:1023:Next wakeup is due at 2023-05-17 12:33:18.037520+00:00 (in 9.996467 seconds)
+2023-05-17 12:33:08,043:INFO:apscheduler.executors.default:base:run_job:123:Running job "test (trigger: interval[0:00:10], next run at: 2023-05-17 12:33:18 UTC)" (scheduled at 2023-05-17 12:33:08.037520+00:00)
