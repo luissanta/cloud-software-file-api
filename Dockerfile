@@ -4,8 +4,8 @@ WORKDIR /app_file
 
 COPY requirements.txt requirements.txt
 
-RUN pip3 install -r requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . .
 
-CMD ["celery", "-A", "app.tasks.file.tasks", "worker", "-l", "info", "--pool=solo", "-Q", "request"]
+CMD ["gunicorn", "-b", "0.0.0.0:5003", "-w", "1", "--threads", "1", "wsgi:app"]

@@ -1,8 +1,8 @@
-flask
+flask==2.3.2
 flask-cors
 python-dotenv==1.0.0
 celery
-redis==4.5.4
+redis==4.5.5
 flask_jwt_extended
 flask-sqlalchemy
 Flask-APScheduler
@@ -11,6 +11,6 @@ gunicorn
 pysmb
 google
 google-api-python-client
-google-cloud-storage
+google-cloud-storage==2.9.0
 google-cloud-pubsub
-sqlalchemy
+sqlalchemy==2.0.13
