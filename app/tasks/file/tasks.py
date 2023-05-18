@@ -1,18 +1,17 @@
 import json
 import logging.config
-import multiprocessing
 import os
 from concurrent.futures._base import CancelledError
 from concurrent.futures._base import TimeoutError
+from datetime import datetime, timedelta
 
 from flask_apscheduler import APScheduler
 from google.cloud import pubsub_v1
 
-from app.repositories.file.file_manager import FileManager
-from app.repositories.file.bucket_file_storage import BucketFileStorage
-from app.factories import CompressorFactory
 from app.enums.file import ConverterStatusEnum
-
+from app.factories import CompressorFactory
+from app.repositories.file.bucket_file_storage import BucketFileStorage
+from app.repositories.file.file_manager import FileManager
 from ...models.sqlAlchemy.TaskFileModel import Task
 from ...models.sqlAlchemy.declarative_base import Session
 
@@ -62,15 +61,20 @@ def converter_request(task_id: str, file_id: int, new_format: str) -> str:
 
 def update_status_task(task_id, status):
     session = Session()
-    task = session.query(Task).filter(Task.task_id == task_id).first()
-    task.status = status
-    session.add(task)
-    session.commit()
+    try:
+        task = session.query(Task).filter(Task.task_id == task_id).first()
+        task.status = status
+        session.add(task)
+        session.commit()
+    except Exception as e:
+        logger.error("fail updating task: {task} with error: {error}".format(task=task_id, error=e))
+    finally:
+        session.close()
 
 
 def process_msg():
     try:
-
+        logger.info("aqui estoy ")
         with pubsub_v1.SubscriberClient() as subscriber:
             future = subscriber.subscribe(subscriptor, callback)
             future.result()
@@ -83,6 +87,8 @@ def process_msg():
     except Exception as e:
         logger.error("failed to proccess message: error {error}".format(error=e))
         future.cancel()
+    while True:
+        pass
 
 
-scheduler.add_job(id="test", func=process_msg, trigger="interval", seconds=int(os.getenv("SCHEDULER_TIME")), max_instances=multiprocessing.cpu_count())
+scheduler.add_job(id="test", func=process_msg, trigger="date", run_date=datetime.now() + timedelta(minutes=1))
