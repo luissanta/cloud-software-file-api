@@ -93,3 +93,4 @@ dmypy.json
 cython_debug/
 
 circumference_helper_whitout_library.py
+files.log
