@@ -15,10 +15,12 @@ file_converter = FileConverter()
 @api_routes.route('/files/process', methods=['POST'])
 def create_task():
     try:
+        """
         data = json.loads(request.data)
         message =json.loads(base64.b64decode(data['message']['data']).decode('utf-8'))
         file_converter.converter_request(message["task_id"], message["url"], message["new_format"])
-        return 200
+        """
+        return request.data, 200
     except Exception as e:
         logger.error("error processing message: error {error}".format(error=e))
         return {"error": e}, 501
