@@ -23,15 +23,15 @@ def create_task():
 
         data = json.loads(request.data)
 
-        pubSub.send_message(data.decode())
+        pubSub.send_message(data)
 
         message =json.loads(base64.b64decode(data['message']['data']).decode('utf-8'))
 
-        pubSub.send_message(message.decode())
+        pubSub.send_message(message)
 
         file_converter.converter_request(message["task_id"], message["url"], message["new_format"])
 
-        pubSub.send_message(request.data.decode())
+        pubSub.send_message(request.data)
         print(request)
         return request.data, 200
     except Exception as e:
