@@ -14,6 +14,7 @@ from app.repositories.file.bucket_file_storage import BucketFileStorage
 from app.repositories.file.file_manager import FileManager
 from ...models.sqlAlchemy.TaskFileModel import Task
 from ...models.sqlAlchemy.declarative_base import Session
+from ...utils.file_converter import FileConverter
 
 logging.config.fileConfig("logging.conf")
 logger = logging.getLogger(__name__)
@@ -24,52 +25,17 @@ scheduler = APScheduler()
 publisher = pubsub_v1.PublisherClient()
 subscriptor = os.getenv('GCP_SUBSCRIPTOR')
 topic = os.getenv('GCP_TOPIC')
-
+file_converter = FileConverter()
 
 def callback(msg):
     try:
         data = json.loads(msg.data)
         logger.info("running schedule task: id {task_id}, msg: {msg}".format(task_id=data["task_id"], msg=data))
-        converter_request(data["task_id"], data["url"], data["new_format"])
+        file_converter.converter_request(data["task_id"], data["url"], data["new_format"])
         msg.ack()
     except Exception as e:
         logger.error("error processing message: error {error}".format(error=e))
         raise e
-
-
-def converter_request(task_id: str, file_id: int, new_format: str) -> str:
-    try:
-        fetched_file_data, fetched_file_name = file_manager.get_file(file_id)
-        compressor_factory = CompressorFactory()
-        compresor_type = compressor_factory.get_compressor(new_format.upper())
-        file_compress_data, file_compress_name = compresor_type.compress(
-            fetched_file_data,
-            fetched_file_name
-        )
-        file_manager.save_file(
-            file_compress_name,
-            file_compress_data,
-            new_format
-        )
-        status = ConverterStatusEnum.PROCESSED.value
-    except:
-        status = ConverterStatusEnum.FAILED.value
-    finally:
-        update_status_task(task_id, status)
-        return status
-
-
-def update_status_task(task_id, status):
-    session = Session()
-    try:
-        task = session.query(Task).filter(Task.task_id == task_id).first()
-        task.status = status
-        session.add(task)
-        session.commit()
-    except Exception as e:
-        logger.error("fail updating task: {task} with error: {error}".format(task=task_id, error=e))
-    finally:
-        session.close()
 
 
 def process_msg():
@@ -91,4 +57,4 @@ def process_msg():
         pass
 
 
-scheduler.add_job(id="test", func=process_msg, trigger="date", run_date=datetime.now() + timedelta(minutes=1))
+#scheduler.add_job(id="test", func=process_msg, trigger="date", run_date=datetime.now() + timedelta(minutes=1))
