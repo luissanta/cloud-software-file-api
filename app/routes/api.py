@@ -17,19 +17,25 @@ file_converter = FileConverter()
 
 @api_routes.route('/files/process', methods=['POST'])
 def create_task():
+    pubSub = PubSubTopic()
     try:
-        pubSub = PubSubTopic()
-        """
+        pubSub.send_message(request.data.decode())
+
         data = json.loads(request.data)
+
+        pubSub.send_message(data.decode())
+
         message =json.loads(base64.b64decode(data['message']['data']).decode('utf-8'))
+
+        pubSub.send_message(message.decode())
+
         file_converter.converter_request(message["task_id"], message["url"], message["new_format"])
-        """
+
         pubSub.send_message(request.data.decode())
         print(request)
         return request.data, 200
     except Exception as e:
-        print("error")
-        print(e)
+        pubSub.send_message(e.args[0])
         logger.error("error processing message: error {error}".format(error=e))
         return {"error": e}, 501
 
